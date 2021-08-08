@@ -11,9 +11,7 @@
 	}
 ?>
 <div class="content">
-            <div>
-		  <img src="../../images/logos/2019Anniversary.JPG" width="932" height="308">
-	   </div>
+            
        <div class="home_news_summary">
           <h3><?php echo($title_news); ?></h3>
 		  <?php include "$_SERVER[DOCUMENT_ROOT]/common/content/news_summary.php"; ?>
@@ -22,8 +20,5 @@
           <h3><?php echo ($title_message);?></h3>
 		  <?php include "$_SERVER[DOCUMENT_ROOT]/common/content/latest_message.php"; ?>		  
         </div>
-     <div class="latest_message">
-          <h3><?php echo ($title_songs);?></h3>
-		  <?php include "$_SERVER[DOCUMENT_ROOT]/common/content/latest_hymn.php"; ?>
-        </div>
+     
 </div>

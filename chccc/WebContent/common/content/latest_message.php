@@ -59,7 +59,7 @@
 		else
 		{
 				echo "<tr><td>$message_date</td>" .
-					"<td>$speaker$speaker_title</td><td><a href='$audio_library$message_audio_file' target='new'>$message_title</a></td><td>";	
+					"<td>$speaker$speaker_title</td><td>$message_title</td><td>";	
 		}
 		if($pdf_exists){
 				echo "<a href='$pdf_library$message_pdf_file' target='new'><img src='/images/pdf.gif'></a>";
