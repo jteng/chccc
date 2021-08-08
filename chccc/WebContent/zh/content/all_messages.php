@@ -46,7 +46,7 @@ $num = mysql_numrows($result);
 
 $i = 0;
 
-echo "<table style='border-bottom:1px solid #888'><tr><th>日期</th><th>稱呼</th><th>講員</th><th>主題</th><th>大綱</th></tr>";
+echo "<table style='border-bottom:1px solid #888'><tr><th>日期</th><th>稱呼</th><th>講員</th><th>主題</th><th>大綱</th><th>V</th></tr>";
 while ($i < $num) {
 	$background=null;
 	if($i%2==0)$background="rgb(245, 245, 250)";
@@ -55,6 +55,7 @@ while ($i < $num) {
 	$message_title = mysql_result($result, $i, "message_title");
 	$message_date = mysql_result($result, $i, "message_date");
 	$message_audio_file =mysql_result($result, $i, "message_audio_file_name");
+	$message_video_file =mysql_result($result, $i, "message_video_file_name");
 	$message_pdf_file =mysql_result($result, $i, "message_pdf_file_name");
 	
 	$date_msg=new DateTime($message_date);	
@@ -84,11 +85,16 @@ while ($i < $num) {
 			if($mp3_exists){
 				echo "<a href='$audio_library$message_audio_file'>$message_title</a>";
 				}
+				else {
+				    echo "$message_title";
+				}
 		echo	"</td><td>";
 	if($pdf_exists){
 			echo "<a href='$pdf_library$message_pdf_file'><img src='/images/pdf.gif'></a>";
 	}
-	echo "</td></tr>";
+	echo "</td>";
+	echo "<td><a href='$message_video_file' target='new'><img src='/images/video-clip.png'></a></td>";
+	echo "</tr>";
 
 	$i++;
 }
